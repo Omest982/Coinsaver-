@@ -15,9 +15,15 @@ private:
 	vector<Category_spend> spend;		//Категории трат	
 public:
 	User();
+	User(string, vector<Wallet>, vector<Category_earn>, vector<Category_spend>);
 	~User();
 	void setName(string);
+	void setWallets(vector<Wallet>);
+	void setEarn(vector<Category_earn>);
+	void setSpend(vector<Category_spend>);
 	string getName();
-	Wallet getWallets();
+	vector<Wallet> getWallets();
+	vector<Category_earn> getEarn();
+	vector<Category_spend> getSpend();
 	void print();
 };
