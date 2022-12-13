@@ -10,6 +10,7 @@ private:
 	int money;	 //Денег заработано|потрачено 
 public:
 	Category_earn();		//Конструкторы
+	Category_earn(string);
 	Category_earn(string, int);
 	~Category_earn();		//Деструктор
 	void setName(string);

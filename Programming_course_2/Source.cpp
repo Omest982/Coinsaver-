@@ -10,12 +10,18 @@
 using namespace std;
 
 int main() {
+	setlocale(LC_ALL, "Russian");
 	//TEST
-	User a;
-	Wallet b, c;
-	vector<Wallet> WAL = { b, c };
-	a.setWallets(WAL);
-	a.print();
+	User Ivan("Ivan");
+	Wallet Nalichka("Наличные", 100);
+	Category_earn Podrabotka("Подработка", 0);
+	Category_spend Mashina("Машина");
+	Category_spend Komunalka("Коммуналка", 0, 100);
+	Ivan.addWallets(Nalichka);
+	Ivan.addEarn(Podrabotka);
+	Ivan.addSpend(Mashina);
+	Ivan.addSpend(Komunalka);
+	Ivan.print();
 	//TEST
 
 	return 0;

@@ -8,6 +8,13 @@ User::User()
 	spend = {};
 }
 
+User::User(string newName) {
+	name = newName;
+	wallets = {};
+	earn = {};
+	spend = {};
+}
+
 User::User(string newName, vector<Wallet> newWallets, vector<Category_earn> newEarn, vector<Category_spend> newSpend)
 {
 	name = newName;
@@ -30,14 +37,35 @@ void User::setWallets(vector<Wallet> newWallets)
 	wallets = newWallets;
 }
 
+void User::addWallets(Wallet newWallet)
+{
+	wallets.push_back(newWallet);
+}
+
 void User::setEarn(vector<Category_earn> newEarn)
 {
 	earn = newEarn;
 }
 
+void User::addEarn(Category_earn newEarn)
+{
+	earn.push_back(newEarn);
+}
+
 void User::setSpend(vector<Category_spend> newSpend)
 {
 	spend = newSpend;
+}
+
+void User::addSpend(Category_spend newSpend)
+{
+	spend.push_back(newSpend);
+}
+
+void User::setStat(int newProfit, int newExpenses)
+{
+	stat.setProfit(newProfit);
+	stat.setExpenses(newExpenses);
 }
 
 string User::getName()
@@ -58,6 +86,26 @@ vector<Category_earn> User::getEarn()
 vector<Category_spend> User::getSpend()
 {
 	return spend;
+}
+
+Stats User::getStat()
+{
+	return stat;
+}
+
+void User::spendOperation()
+{
+
+}
+
+void User::earnOperation()
+{
+
+}
+
+void User::walletOperation()
+{
+
 }
 
 void User::print()

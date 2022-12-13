@@ -6,6 +6,12 @@ Category_earn::Category_earn()
 	money = 0;
 }
 
+Category_earn::Category_earn(string newName)
+{
+	name = newName;
+	money = 0;
+}
+
 Category_earn::Category_earn(string newName, int newMoney)
 {
 	name = newName;
