@@ -22,7 +22,6 @@ int main() {
 	Ivan.addSpend(Mashina);
 	Ivan.addSpend(Komunalka);
 	Ivan.print();
-	User Abdulla("Abdulla");
 	//TEST
 
 	return 0;
