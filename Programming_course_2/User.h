@@ -33,12 +33,12 @@ public:
 	vector<Category_earn> getEarn();
 	vector<Category_spend> getSpend();
 	Stats getStat();
-	void spendOperation(); //Нужно сделать
+	void spendOperation(string, string, int); //Нужно сделать
 	/*
 	С определенного кошелька снимаются деньги и добавляются в деньги 
 	категории трат + в статистику добавляются в траты
 	*/ 
-	void earnOperation();  //Нужно сделать
+	void earnOperation(string, string, int);  //Нужно сделать
 	/*
 	На определенный кошелек добавляются деньги и добавляются в деньги категории
 	заработка + в статистику добаляются в заработок
