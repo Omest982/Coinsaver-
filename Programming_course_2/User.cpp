@@ -103,9 +103,27 @@ void User::earnOperation()
 
 }
 
-void User::walletOperation()
+void User::walletOperation(string firstName, string secondName, int amount)
 {
+	Wallet firstWallet;
+	Wallet secondWallet;
+	int firstIndex;
+	int secondIndex;
+	for (int i = 0; i < wallets.size(); i++) {
+		if (firstName == wallets[i].getName()) {
+			firstWallet = wallets[i];
+			firstIndex = i;
+		}
+		else if (secondName == wallets[i].getName()) {
+			secondWallet = wallets[i];
+			secondIndex = i;
+		}
+	}
+	firstWallet.setMoney(firstWallet.getMoney() - amount);
+	secondWallet.setMoney(secondWallet.getMoney() + amount);
 
+	wallets[firstIndex] = firstWallet;
+	wallets[secondIndex] = secondWallet;
 }
 
 void User::print()
