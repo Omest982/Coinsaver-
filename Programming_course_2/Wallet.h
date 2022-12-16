@@ -1,19 +1,15 @@
 ﻿#pragma once
 #include <string>
+#include "Account.h"
 
 using namespace std;
 
-class Wallet {
+class Wallet: public Account {
 private:
-	string name;		//Название
-	int money;			//Количество денег на счету
+	
 public:
 	Wallet();				//Конструкторы
 	Wallet(string, int);
 	~Wallet();				//Деструктор
-	void setName(string);
-	void setMoney(int);
-	string getName();
-	int getMoney();
 	void print();
 };

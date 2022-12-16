@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
     <ClCompile Include="Category_earn.cpp" />
     <ClCompile Include="Category_spend.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="Category_spend.h" />
     <ClInclude Include="Category_earn.h" />
+    <ClInclude Include="Account.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="Wallet.h" />

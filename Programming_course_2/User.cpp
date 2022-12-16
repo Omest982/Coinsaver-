@@ -115,7 +115,7 @@ void User::spendOperation(string firstName, string secondName, int amount)
 	wallets[firstIndex] = firstWallet;
 	spend[secondIndex] = secondCategory_spend;
 
-	stat.setExpenses(stat.getExpenses() + amount)
+	stat.setExpenses(stat.getExpenses() + amount);
 }
 
 void User::earnOperation(string firstName, string secondName, int amount)

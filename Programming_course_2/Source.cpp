@@ -6,6 +6,7 @@
 #include "Stats.h"
 #include "User.h"
 #include "Wallet.h"
+#include "Account.h"
 
 using namespace std;
 
@@ -24,7 +25,8 @@ int main() {
 	Ivan.addSpend(Mashina);
 	Ivan.addSpend(Komunalka);
 	Ivan.walletOperation("Наличные", "Банк", 20);
-	Ivan.print();
+	Nalichka.print();
+	Podrabotka.print();
 	//TEST
 
 	return 0;
