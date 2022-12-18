@@ -99,23 +99,32 @@ void User::spendOperation(string firstName, string secondName, int amount)
 	Category_spend secondCategory_spend;
 	int firstIndex;
 	int secondIndex;
+	int find = 0;
 	for (int i = 0; i < wallets.size(); i++) {
 		if (firstName == wallets[i].getName()) {
 			firstWallet = wallets[i];
 			firstIndex = i;
+			find++;
 		}
 		else if (secondName == spend[i].getName()) {
 			secondCategory_spend = spend[i];
 			secondIndex = i;
+			find++;
 		}
 	}
-	firstWallet.setMoney(firstWallet.getMoney() - amount);
-	secondCategory_spend.setMoney(secondCategory_spend.getBudget() + amount);
+	if (find == 2) {
+		firstWallet.setMoney(firstWallet.getMoney() - amount);
+		secondCategory_spend.setMoney(secondCategory_spend.getMoney() + amount);
 
-	wallets[firstIndex] = firstWallet;
-	spend[secondIndex] = secondCategory_spend;
+		wallets[firstIndex] = firstWallet;
+		spend[secondIndex] = secondCategory_spend;
 
-	stat.setExpenses(stat.getExpenses() + amount);
+		stat.setExpenses(stat.getExpenses() + amount);
+	}
+	else {
+		cout << "ERROR!" << endl;
+	}
+	
 }
 
 void User::earnOperation(string firstName, string secondName, int amount)
@@ -124,6 +133,7 @@ void User::earnOperation(string firstName, string secondName, int amount)
 	Category_earn secondCategory_earn;
 	int firstIndex;
 	int secondIndex;
+	int find = 0;
 	for (int i = 0; i < wallets.size(); i++) {
 		if (firstName == wallets[i].getName()) {
 			firstWallet = wallets[i];
@@ -134,13 +144,19 @@ void User::earnOperation(string firstName, string secondName, int amount)
 			secondIndex = i;
 		}
 	}
-	firstWallet.setMoney(firstWallet.getMoney() + amount);
-	secondCategory_earn.setMoney(secondCategory_earn.getMoney() + amount);
+	if (find == 2) {
+		firstWallet.setMoney(firstWallet.getMoney() + amount);
+		secondCategory_earn.setMoney(secondCategory_earn.getMoney() + amount);
 
-	wallets[firstIndex] = firstWallet;
-	earn[secondIndex] = secondCategory_earn;
+		wallets[firstIndex] = firstWallet;
+		earn[secondIndex] = secondCategory_earn;
 
-	stat.setProfit(stat.getProfit() + amount);
+		stat.setProfit(stat.getProfit() + amount);
+	}
+	else {
+		cout << "ERROR!" << endl;
+	}
+	
 }
 
 void User::walletOperation(string firstName, string secondName, int amount)
@@ -149,6 +165,7 @@ void User::walletOperation(string firstName, string secondName, int amount)
 	Wallet secondWallet;
 	int firstIndex;
 	int secondIndex;
+	int find = 0;
 	for (int i = 0; i < wallets.size(); i++) {
 		if (firstName == wallets[i].getName()) {
 			firstWallet = wallets[i];
@@ -159,11 +176,17 @@ void User::walletOperation(string firstName, string secondName, int amount)
 			secondIndex = i;
 		}
 	}
-	firstWallet.setMoney(firstWallet.getMoney() - amount);
-	secondWallet.setMoney(secondWallet.getMoney() + amount);
+	if (find == 2) {
+		firstWallet.setMoney(firstWallet.getMoney() - amount);
+		secondWallet.setMoney(secondWallet.getMoney() + amount);
 
-	wallets[firstIndex] = firstWallet;
-	wallets[secondIndex] = secondWallet;
+		wallets[firstIndex] = firstWallet;
+		wallets[secondIndex] = secondWallet;
+	}
+	else {
+		cout << "ERROR!" << endl;
+	}
+	
 }
 
 void User::print()
