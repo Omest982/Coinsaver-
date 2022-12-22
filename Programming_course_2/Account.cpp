@@ -32,6 +32,16 @@ void Account::setMoney(int newMoney)
 	money = newMoney;
 }
 
+void Account::plusMoney(int amount)
+{
+	money += amount;
+}
+
+void Account::minusMoney(int amount)
+{
+	money -= amount;
+}
+
 string Account::getName()
 {
 	return name;

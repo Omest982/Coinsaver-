@@ -17,25 +17,25 @@ private:
 	Stats stat;							//Статистика 
 public:
 	User();
-	User(string, vector<Wallet>, vector<Category_earn>, vector<Category_spend>);
-	User(string);
+	User(string _name, vector<Wallet> _wallets, vector<Category_earn> _earn, vector<Category_spend> _spend);
+	User(string _name);
 	~User();
-	void setName(string);
-	void setWallets(vector<Wallet>);
-	void addWallets(Wallet);
-	void setEarn(vector<Category_earn>);
-	void addEarn(Category_earn);
-	void setSpend(vector<Category_spend>);
-	void addSpend(Category_spend);
-	void setStat(int, int);
+	void setName(string newName);
+	void setWallets(vector<Wallet> newWallets);
+	void addWallets(Wallet newWallet);
+	void setEarn(vector<Category_earn> newEarns);
+	void addEarn(Category_earn newEarn);
+	void setSpend(vector<Category_spend> newSpends);
+	void addSpend(Category_spend newSpend);
+	void setStat(int newProfit, int newExpenses);
 	string getName();
 	vector<Wallet> getWallets();
 	vector<Category_earn> getEarn();
 	vector<Category_spend> getSpend();
 	Stats getStat();
-	void spendOperation(string, string, int); 
-	void earnOperation(string, string, int);  
-	void walletOperation(string, string, int);  
+	void spendOperation(string walletName, string categoryName, int amount); 
+	void earnOperation(string walletName, string categoryName, int amount);
+	void walletOperation(string fromWalletName, string toWalletName, int amount);
 	
 	void print();
 };

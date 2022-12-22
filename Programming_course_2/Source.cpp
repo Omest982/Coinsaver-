@@ -17,7 +17,7 @@ int main() {
 	Wallet Nalichka("Наличные", 100);
 	Wallet Bank("Банк", 100);
 	Category_earn Podrabotka("Подработка", 0);
-	Category_spend Mashina("Машина");
+	Category_spend Mashina("Car", 20);
 	Category_spend Komunalka("Коммуналка", 0, 100);
 	Ivan.addWallets(Nalichka);
 	Ivan.addWallets(Bank);
@@ -25,8 +25,9 @@ int main() {
 	Ivan.addSpend(Mashina);
 	Ivan.addSpend(Komunalka);
 	Ivan.walletOperation("Наличные", "Банк", 20);
-	Nalichka.print();
-	Podrabotka.print();
+	Ivan.spendOperation("Банк", "Коммуналка", 110);
+	Ivan.earnOperation("Наличные", "Подработка", 200);
+	Ivan.getStat().print();
 	//TEST
 
 	return 0;

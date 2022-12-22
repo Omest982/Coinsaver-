@@ -9,11 +9,13 @@ private:
 	int expenses;		//Денег потрачено
 public:
 	Stats();
-	Stats(int, int);			//Конструкторы
+	Stats(int _profit, int _expenses);			//Конструкторы
 	~Stats();
-	void setProfit(int);
-	void setExpenses(int);
+	void setProfit(int newProfit);
+	void setExpenses(int newExpenses);
 	int getProfit();
 	int getExpenses();
+	void addProfit(int amount);
+	void addExpenses(int amount);
 	void print();
 };

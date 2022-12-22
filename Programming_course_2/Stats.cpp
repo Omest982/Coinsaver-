@@ -6,10 +6,10 @@ Stats::Stats()
 	expenses = 0;
 }
 
-Stats::Stats(int newProfit, int newExpenses)
+Stats::Stats(int _profit, int _expenses)
 {
-	profit = newProfit;
-	expenses = newExpenses;
+	profit = _profit;
+	expenses = _expenses;
 }
 
 Stats::~Stats()
@@ -34,6 +34,16 @@ int Stats::getProfit()
 int Stats::getExpenses()
 {
 	return expenses;
+}
+
+void Stats::addProfit(int amount)
+{
+	profit += amount;
+}
+
+void Stats::addExpenses(int amount)
+{
+	expenses += amount;
 }
 
 void Stats::print()

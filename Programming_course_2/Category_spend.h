@@ -6,11 +6,11 @@ private:
 	int budget;		//Выделеный бюджет
 public:
 	Category_spend();		//Конструкторы
-	Category_spend(string);
-	Category_spend(string, int);
-	Category_spend(string, int, int);		//Наследует переменные
+	Category_spend(string _name);
+	Category_spend(string _name, int _money);
+	Category_spend(string _name, int _money, int _budget);		//Наследует переменные
 	~Category_spend();		//Деструктор
-	void setBudget(int);
+	void setBudget(int newBudget);
 	int getBudget();
 	void print();
 };

@@ -5,19 +5,19 @@ Category_spend::Category_spend()
 	budget = 0;
 }
 
-Category_spend::Category_spend(string newName): Category_earn(newName)
+Category_spend::Category_spend(string _name): Category_earn(_name)
 {
 	budget = 0;
 }
 
-Category_spend::Category_spend(string newName, int newMoney): Category_earn(newName, newMoney)
+Category_spend::Category_spend(string _name, int _money): Category_earn(_name, _money)
 {
 	budget = 0;
 }
 
-Category_spend::Category_spend(string newName, int newMoney, int newBudget) : Category_earn(newName, newMoney)
+Category_spend::Category_spend(string _name, int _money, int _budget) : Category_earn(_name, _money)
 {
-	budget = newBudget;
+	budget = _budget;
 }
 
 Category_spend::~Category_spend()

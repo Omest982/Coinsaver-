@@ -7,7 +7,7 @@ Wallet::Wallet(): Account()
 {
 }
 
-Wallet::Wallet(string newName, int newMoney): Account(newName, newMoney)
+Wallet::Wallet(string _name, int _money): Account(_name, _money)
 {
 	
 }

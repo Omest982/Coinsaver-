@@ -9,7 +9,7 @@ private:
 	
 public:
 	Wallet();				//Конструкторы
-	Wallet(string, int);
+	Wallet(string _name, int _money);
 	~Wallet();				//Деструктор
 	void print();
 };
