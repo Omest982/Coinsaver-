@@ -10,12 +10,17 @@ Category_spend::Category_spend(string _name): Category_earn(_name)
 	budget = 0;
 }
 
-Category_spend::Category_spend(string _name, int _money): Category_earn(_name, _money)
+Category_spend::Category_spend(const Category_spend& _spend): Category_earn(_spend.getName())
 {
-	budget = 0;
+	budget = _spend.getBudget();
 }
 
-Category_spend::Category_spend(string _name, int _money, int _budget) : Category_earn(_name, _money)
+/*Category_spend::Category_spend(string _name, int _money) : Category_earn(_name, _money)
+{
+	budget = 0;
+}*/
+
+Category_spend::Category_spend(string _name, int _budget) : Category_earn(_name)
 {
 	budget = _budget;
 }
@@ -29,7 +34,7 @@ void Category_spend::setBudget(int newBudget)
 	budget = newBudget;
 }
 
-int Category_spend::getBudget()
+int Category_spend::getBudget() const
 {
 	return budget;
 }

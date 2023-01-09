@@ -12,6 +12,12 @@ Stats::Stats(int _profit, int _expenses)
 	expenses = _expenses;
 }
 
+Stats::Stats(const Stats& _stat)
+{
+	profit = _stat.getProfit();
+	expenses = _stat.getExpenses();
+}
+
 Stats::~Stats()
 {
 }
@@ -26,12 +32,12 @@ void Stats::setExpenses(int newExpenses)
 	expenses = newExpenses;
 }
 
-int Stats::getProfit()
+int Stats::getProfit() const
 {
 	return profit;
 }
 
-int Stats::getExpenses()
+int Stats::getExpenses() const
 {
 	return expenses;
 }

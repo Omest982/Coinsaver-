@@ -10,11 +10,12 @@ private:
 public:
 	Stats();
 	Stats(int _profit, int _expenses);			//Конструкторы
+	Stats(const Stats& _stat);
 	~Stats();
 	void setProfit(int newProfit);
 	void setExpenses(int newExpenses);
-	int getProfit();
-	int getExpenses();
+	int getProfit() const;
+	int getExpenses() const;
 	void addProfit(int amount);
 	void addExpenses(int amount);
 	void print();

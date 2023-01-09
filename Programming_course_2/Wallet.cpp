@@ -7,6 +7,10 @@ Wallet::Wallet(): Account()
 {
 }
 
+Wallet::Wallet(const Wallet& _wallet): Account(_wallet.getName(), _wallet.getMoney())
+{
+}
+
 Wallet::Wallet(string _name, int _money): Account(_name, _money)
 {
 	

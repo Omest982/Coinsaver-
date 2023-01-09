@@ -8,9 +8,13 @@ Category_earn::Category_earn(string _name): Account(_name)
 {
 }
 
-Category_earn::Category_earn(string _name, int _money): Account(_name, _money)
+Category_earn::Category_earn(const Category_earn& _earn): Account(_earn.getName())
 {
 }
+
+/*Category_earn::Category_earn(string _name, int _money) : Account(_name, _money)
+{
+}*/
 
 Category_earn::~Category_earn()
 {

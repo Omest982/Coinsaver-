@@ -7,10 +7,11 @@ private:
 public:
 	Category_spend();		//Конструкторы
 	Category_spend(string _name);
-	Category_spend(string _name, int _money);
-	Category_spend(string _name, int _money, int _budget);		//Наследует переменные
+	Category_spend(const Category_spend& _spend);
+	//Category_spend(string _name, int _money);
+	Category_spend(string _name, int _budget);		
 	~Category_spend();		//Деструктор
 	void setBudget(int newBudget);
-	int getBudget();
+	int getBudget() const;
 	void print();
 };

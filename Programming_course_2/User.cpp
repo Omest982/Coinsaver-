@@ -1,11 +1,15 @@
 #include "User.h"
 
+
+int User::userAmount = 0;
+
 User::User()
 {
 	name = "noName";
 	wallets = {};
 	earn = {};
 	spend = {};
+	userAmount++;
 }
 
 User::User(string _name) {
@@ -13,6 +17,35 @@ User::User(string _name) {
 	wallets = {};
 	earn = {};
 	spend = {};
+	userAmount++;
+}
+
+User::User(const User& _user)
+{
+	name = _user.getName();
+	/*if (_user.getWallets().size() > 0) {
+		vector<Wallet> newWallets = _user.getWallets();
+		for (int i = 0; i < newWallets.size(); i++) {
+			newWallets[i].setMoney(0);
+		}
+		wallets = newWallets;
+	}*/
+	wallets = _user.getWallets();
+	if (_user.getEarn().size() > 0) {
+		vector<Category_earn> newEarn = _user.getEarn();
+		for (int i = 0; i < newEarn.size(); i++) {
+			newEarn[i].setMoney(0);
+		}
+		earn = newEarn;
+	}
+	if (_user.getSpend().size() > 0) {
+		vector<Category_spend> newSpend = _user.getSpend();
+		for (int i = 0; i < newSpend.size(); i++) {
+			newSpend[i].setMoney(0);
+		}
+		spend = newSpend;
+	}
+	userAmount++;
 }
 
 User::User(string _name, vector<Wallet> _wallets, vector<Category_earn> _earn, vector<Category_spend> _spend)
@@ -21,6 +54,7 @@ User::User(string _name, vector<Wallet> _wallets, vector<Category_earn> _earn, v
 	wallets = _wallets;
 	earn = _earn;
 	spend = _spend;
+	userAmount++;
 }
 
 User::~User()
@@ -37,7 +71,7 @@ void User::setWallets(vector<Wallet> newWallets)
 	wallets = newWallets;
 }
 
-void User::addWallets(Wallet newWallet)
+void User::addWallet(Wallet newWallet)
 {
 	wallets.push_back(newWallet);
 }
@@ -68,29 +102,34 @@ void User::setStat(int newProfit, int newExpenses)
 	stat.setExpenses(newExpenses);
 }
 
-string User::getName()
+string User::getName() const
 {
 	return name;
 }
 
-vector <Wallet> User::getWallets()
+vector <Wallet> User::getWallets() const
 {
 	return wallets;
 }
 
-vector<Category_earn> User::getEarn()
+vector<Category_earn> User::getEarn() const
 {
 	return earn;
 }
 
-vector<Category_spend> User::getSpend()
+vector<Category_spend> User::getSpend() const
 {
 	return spend;
 }
 
-Stats User::getStat()
+Stats User::getStat() const
 {
 	return stat;
+}
+
+int User::getUserAmount() const
+{
+	return userAmount;
 }
 
 void User::spendOperation(string walletName, string categoryName, int amount)
@@ -183,7 +222,10 @@ void User::walletOperation(string fromWalletName, string toWalletName, int amoun
 	int firstIndex, secondIndex;
 	int find = 0;
 	for (int i = 0; i < wallets.size(); i++) {
-		if (fromWalletName == wallets[i].getName()) {
+		if (find == 2) {
+			break;
+		}
+		else if (fromWalletName == wallets[i].getName()) {
 			fromWallet = wallets[i];
 			firstIndex = i;
 			find++;
@@ -222,4 +264,5 @@ void User::print()
 	for (int i = 0; i < spend.size(); i++) {
 		cout << spend[i].getName() << " ";
 	}
+	cout << endl;
 }

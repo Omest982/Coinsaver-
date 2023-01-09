@@ -18,6 +18,12 @@ Account::Account(string newName, int newMoney)
 	money = newMoney;
 }
 
+Account::Account(Account& _account)
+{
+	name = _account.getName();
+	money = _account.getMoney();
+}
+
 Account::~Account()
 {
 }
@@ -42,12 +48,12 @@ void Account::minusMoney(int amount)
 	money -= amount;
 }
 
-string Account::getName()
+string Account::getName() const
 {
 	return name;
 }
 
-int Account::getMoney()
+int Account::getMoney() const
 {
 	return money;
 }

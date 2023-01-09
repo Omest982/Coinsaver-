@@ -11,7 +11,8 @@ private:
 public:
 	Category_earn();		//Конструкторы
 	Category_earn(string _name);
-	Category_earn(string _name, int _money);
+	Category_earn(const Category_earn& _earn);
+	//Category_earn(string _name, int _money);
 	~Category_earn();		//Деструктор
 	void print();
 };

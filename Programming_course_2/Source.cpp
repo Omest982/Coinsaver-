@@ -16,11 +16,11 @@ int main() {
 	User Ivan("Ivan");
 	Wallet Nalichka("Наличные", 100);
 	Wallet Bank("Банк", 100);
-	Category_earn Podrabotka("Подработка", 0);
+	Category_earn Podrabotka("Подработка");
 	Category_spend Mashina("Car", 20);
-	Category_spend Komunalka("Коммуналка", 0, 100);
-	Ivan.addWallets(Nalichka);
-	Ivan.addWallets(Bank);
+	Category_spend Komunalka("Коммуналка", 100);
+	Ivan.addWallet(Nalichka);
+	Ivan.addWallet(Bank);
 	Ivan.addEarn(Podrabotka);
 	Ivan.addSpend(Mashina);
 	Ivan.addSpend(Komunalka);
@@ -28,6 +28,11 @@ int main() {
 	Ivan.spendOperation("Банк", "Коммуналка", 110);
 	Ivan.earnOperation("Наличные", "Подработка", 200);
 	Ivan.getStat().print();
+	User George(Ivan);
+	cout << Ivan.getUserAmount() << endl;
+	cout << George.getSpend()[1].getMoney() << endl;
+	
+	
 	//TEST
 
 	return 0;
