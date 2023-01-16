@@ -10,7 +10,7 @@ Category_spend::Category_spend(string _name): Category_earn(_name)
 	budget = 0;
 }
 
-Category_spend::Category_spend(const Category_spend& _spend): Category_earn(_spend.getName())
+Category_spend::Category_spend(const Category_spend& _spend): Category_earn(_spend.getName(), _spend.getMoney())
 {
 	budget = _spend.getBudget();
 }
@@ -43,4 +43,38 @@ void Category_spend::print()
 {
 	
 	cout << "Category spend name : "<< getName() << endl << "Money spend : " << getMoney() << endl << "Budget : " << budget << endl;
+}
+
+bool Category_spend::operator>(Category_spend _spend)
+{
+	return this->getMoney() > _spend.getMoney();
+}
+
+bool Category_spend::operator<(Category_spend _spend)
+{
+	return this->getMoney() < _spend.getMoney();
+}
+
+Category_spend Category_spend::operator+(Category_spend _spend)
+{
+	this->plusMoney(_spend.getMoney());
+	return *this;
+}
+
+bool Category_spend::operator==(Category_spend _spend)
+{
+	return this->getMoney() == _spend.getMoney();
+}
+
+bool Category_spend::operator!=(Category_spend _spend)
+{
+	return this->getMoney() != _spend.getMoney();
+}
+
+Category_spend Category_spend::operator=(Category_spend _spend)
+{
+	this->setMoney(_spend.getMoney());
+	this->setName(_spend.getName());
+	this->setBudget(_spend.getBudget());
+	return *this;
 }

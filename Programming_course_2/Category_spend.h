@@ -14,4 +14,10 @@ public:
 	void setBudget(int newBudget);
 	int getBudget() const;
 	void print();
+	bool operator > (Category_spend _spend);
+	bool operator < (Category_spend _spend);
+	Category_spend operator + (Category_spend _spend);
+	bool operator == (Category_spend _spend);
+	bool operator != (Category_spend _spend);
+	Category_spend operator = (Category_spend _spend);
 };

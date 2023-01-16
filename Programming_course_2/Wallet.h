@@ -13,4 +13,14 @@ public:
 	Wallet(string _name, int _money);
 	~Wallet();				//Деструктор
 	void print();
+	Wallet& operator ++ ();
+	Wallet operator ++ (int);
+	Wallet& operator -- ();
+	Wallet operator -- (int);
+	Wallet operator + (Wallet _wallet);
+	bool operator > (Wallet _wallet);
+	bool operator < (Wallet _wallet);
+	Wallet operator = (Wallet _wallet);
+	bool operator == (Wallet _wallet);
+	bool operator != (Wallet _wallet);
 };

@@ -155,7 +155,10 @@ void User::spendOperation(string walletName, string categoryName, int amount)
 			break;
 		}
 	}
-
+	if (_Wallet.getMoney() < amount) {
+		cout << "Not enough money!!" << endl;
+		return;
+	}
 	if (find == 2) {
 		_Wallet.minusMoney(amount);
 		_Category_spend.plusMoney(amount);
@@ -173,6 +176,7 @@ void User::spendOperation(string walletName, string categoryName, int amount)
 	}
 	else {
 		cout << "ERROR!" << endl;
+		return;
 	}
 	
 }

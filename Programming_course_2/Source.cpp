@@ -27,11 +27,10 @@ int main() {
 	Ivan.walletOperation("Наличные", "Банк", 20);
 	Ivan.spendOperation("Банк", "Коммуналка", 110);
 	Ivan.earnOperation("Наличные", "Подработка", 200);
-	Ivan.getStat().print();
-	User George(Ivan);
-	cout << Ivan.getUserAmount() << endl;
-	cout << George.getSpend()[1].getMoney() << endl;
-	
+	//User George(Ivan);
+	bool result = Mashina == Komunalka;
+	cout << result << endl;
+
 	
 	//TEST
 

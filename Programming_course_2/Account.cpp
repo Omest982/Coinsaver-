@@ -18,7 +18,7 @@ Account::Account(string newName, int newMoney)
 	money = newMoney;
 }
 
-Account::Account(Account& _account)
+Account::Account(const Account& _account)
 {
 	name = _account.getName();
 	money = _account.getMoney();
@@ -56,4 +56,37 @@ string Account::getName() const
 int Account::getMoney() const
 {
 	return money;
+}
+
+bool Account::operator>(Account _account)
+{
+	return this->getMoney() > _account.getMoney();
+}
+
+bool Account::operator<(Account _account)
+{
+	return this->getMoney() < _account.getMoney();
+}
+
+Account Account::operator+(Account _account)
+{
+	this->plusMoney(_account.getMoney());
+	return *this;
+}
+
+bool Account::operator==(Account _account)
+{
+	return this->getMoney() == _account.getMoney();
+}
+
+bool Account::operator!=(Account _account)
+{
+	return this->getMoney() != _account.getMoney();
+}
+
+Account Account::operator=(Account _account)
+{
+	this->setMoney(_account.getMoney());
+	this->setName(_account.getName());
+	return *this;
 }

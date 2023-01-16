@@ -12,7 +12,7 @@ public:
 	Account();		//Constructors
 	Account(string _name);
 	Account(string _name, int _money);
-	Account(Account& _account);
+	Account(const Account& _account);
 	~Account();		//Destructor
 	void setName(string newName);
 	void setMoney(int newMoney);
@@ -20,4 +20,11 @@ public:
 	void minusMoney(int amount);
 	string getName() const;
 	int getMoney() const;
+	bool operator > (Account _account);
+	bool operator < (Account _account);
+	Account operator + (Account _account);
+	bool operator == (Account _account);
+	bool operator != (Account _account);
+	Account operator = (Account _account);
+	
 };
