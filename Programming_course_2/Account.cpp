@@ -58,35 +58,67 @@ int Account::getMoney() const
 	return money;
 }
 
-bool Account::operator>(Account _account)
+int Account::virtFunc()
+{
+	cout << "Account func" << endl;
+	return 0;
+}
+
+bool Account::operator>(const Account& _account)
 {
 	return this->getMoney() > _account.getMoney();
 }
 
-bool Account::operator<(Account _account)
+bool Account::operator<(const Account& _account)
 {
 	return this->getMoney() < _account.getMoney();
 }
 
-Account Account::operator+(Account _account)
+Account Account::operator+(const Account& _account)
 {
 	this->plusMoney(_account.getMoney());
 	return *this;
 }
 
-bool Account::operator==(Account _account)
+bool Account::operator==(const Account& _account)
 {
 	return this->getMoney() == _account.getMoney();
 }
 
-bool Account::operator!=(Account _account)
+bool Account::operator!=(const Account& _account)
 {
 	return this->getMoney() != _account.getMoney();
 }
 
-Account Account::operator=(Account _account)
+Account Account::operator=(const Account& _account)
 {
 	this->setMoney(_account.getMoney());
 	this->setName(_account.getName());
 	return *this;
+}
+
+Account::operator int()
+{
+	return money;
+}
+
+Account::operator string()
+{
+	return name;
+}
+
+ostream& operator<<(ostream& out, const Account& _account)
+{
+	out << "Account: " << _account.getName() << endl;
+	out << "Money: " << _account.getMoney() << endl;
+	return out;
+}
+
+istream& operator>>(istream& in, Account& _account)
+{
+	cout << "Enter name for Account" << endl;
+	in >> _account.name;
+	cout << "Enter money for " << _account.name << ":" << endl;
+	in >> _account.money;
+	return in;
 }

@@ -7,6 +7,7 @@
 #include "User.h"
 #include "Wallet.h"
 #include "Account.h"
+#include "Test.h"
 
 using namespace std;
 
@@ -30,7 +31,9 @@ int main() {
 	//User George(Ivan);
 	bool result = Mashina == Komunalka;
 	cout << result << endl;
-
+	cout << Ivan;
+	Test arr;
+	cout << arr[1];
 	
 	//TEST
 

@@ -20,11 +20,15 @@ public:
 	void minusMoney(int amount);
 	string getName() const;
 	int getMoney() const;
-	bool operator > (Account _account);
-	bool operator < (Account _account);
-	Account operator + (Account _account);
-	bool operator == (Account _account);
-	bool operator != (Account _account);
-	Account operator = (Account _account);
-	
+	virtual int virtFunc();
+	bool operator > (const Account& _account);
+	bool operator < (const Account& _account);
+	Account operator + (const Account& _account);
+	bool operator == (const Account& _account);
+	bool operator != (const Account& _account);
+	Account operator = (const Account& _account);
+	friend ostream& operator << (ostream& out, const Account& _account);
+	friend istream& operator >> (istream& in, Account& _account);
+	operator int();
+	operator string();
 };

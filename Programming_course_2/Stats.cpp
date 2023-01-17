@@ -12,10 +12,10 @@ Stats::Stats(int _profit, int _expenses)
 	expenses = _expenses;
 }
 
-Stats::Stats(const Stats& _stat)
+Stats::Stats(const Stats& _stats)
 {
-	profit = _stat.getProfit();
-	expenses = _stat.getExpenses();
+	profit = _stats.getProfit();
+	expenses = _stats.getExpenses();
 }
 
 Stats::~Stats()
@@ -56,4 +56,24 @@ void Stats::print()
 {
 	cout << "Profit : " << profit << endl;
 	cout << "Expenses : " << expenses << endl;
+}
+
+ostream& operator<<(ostream& out, const Stats& _stats)
+{
+	out << "Profit is: " << _stats.getProfit() << endl;
+	out << "Expenses are: " << _stats.getExpenses() << endl;
+	return out;
+}
+
+istream& operator>>(istream& in, Stats& _stats)
+{
+	int profit;
+	int expenses;
+	cout << "Enter profit: " << endl;
+	in >> profit;
+	_stats.setProfit(profit);
+	cout << "Enter expenses: " << endl;
+	in >> expenses;
+	_stats.setExpenses(expenses);
+	return in;
 }

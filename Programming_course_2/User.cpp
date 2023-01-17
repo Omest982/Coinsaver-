@@ -255,18 +255,40 @@ void User::walletOperation(string fromWalletName, string toWalletName, int amoun
 
 void User::print()
 {
-	cout << "Name : " << name << endl;
-	cout << "Wallets : ";
+	cout << "Name: " << name << endl;
+	cout << "Wallets: ";
 	for (int i = 0; i < wallets.size(); i++) {
 		cout << wallets[i].getName() << " ";
 	}
-	cout << endl << "Earn categories : ";
+	cout << endl << "Earn categories: ";
 	for (int i = 0; i < earn.size(); i++) {
 		cout << earn[i].getName() << " ";
 	}
-	cout << endl << "Spend categories : ";
+	cout << endl << "Spend categories: ";
 	for (int i = 0; i < spend.size(); i++) {
 		cout << spend[i].getName() << " ";
 	}
 	cout << endl;
+}
+
+ostream& operator<<(ostream& out, const User& _user)
+{
+	out << "Name: " << _user.getName() << endl;
+	out << "Wallets: ";
+	vector<Wallet> _wallets = _user.getWallets();
+	for (int i = 0; i < _wallets.size(); i++) {
+		out << _wallets[i].getName() << " ";
+	}
+	out << endl << "Earn categories: ";
+	vector<Category_earn> _earn = _user.getEarn();
+	for (int i = 0; i < _earn.size(); i++) {
+		out << _earn[i].getName() << " ";
+	}
+	out << endl << "Spend categories: ";
+	vector<Category_spend> _spend = _user.getSpend();
+	for (int i = 0; i < _spend.size(); i++) {
+		out << _spend[i].getName() << " ";
+	}
+	out << endl;
+	return out;
 }

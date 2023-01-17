@@ -13,14 +13,17 @@ public:
 	Wallet(string _name, int _money);
 	~Wallet();				//Деструктор
 	void print();
+	virtual int virtFunc();
 	Wallet& operator ++ ();
 	Wallet operator ++ (int);
 	Wallet& operator -- ();
 	Wallet operator -- (int);
-	Wallet operator + (Wallet _wallet);
-	bool operator > (Wallet _wallet);
-	bool operator < (Wallet _wallet);
-	Wallet operator = (Wallet _wallet);
-	bool operator == (Wallet _wallet);
-	bool operator != (Wallet _wallet);
+	Wallet operator + (const Wallet& _wallet);
+	bool operator > (const Wallet& _wallet);
+	bool operator < (const Wallet& _wallet);
+	Wallet operator = (const Wallet& _wallet);
+	bool operator == (const Wallet& _wallet);
+	bool operator != (const Wallet& _wallet);
+	friend ostream& operator << (ostream& out, const Wallet& _wallet);
+	friend istream& operator >> (istream& in, Wallet& _wallet);
 };

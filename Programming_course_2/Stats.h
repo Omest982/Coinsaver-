@@ -10,7 +10,7 @@ private:
 public:
 	Stats();
 	Stats(int _profit, int _expenses);			//Конструкторы
-	Stats(const Stats& _stat);
+	Stats(const Stats& _stats);
 	~Stats();
 	void setProfit(int newProfit);
 	void setExpenses(int newExpenses);
@@ -19,4 +19,6 @@ public:
 	void addProfit(int amount);
 	void addExpenses(int amount);
 	void print();
+	friend ostream& operator << (ostream& out, const Stats& _stats);
+	friend istream& operator >> (istream& in, Stats& _stats);
 };

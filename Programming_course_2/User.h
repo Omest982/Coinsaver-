@@ -40,4 +40,5 @@ public:
 	void earnOperation(string walletName, string categoryName, int amount);
 	void walletOperation(string fromWalletName, string toWalletName, int amount);
 	void print();
+	friend ostream& operator << (ostream& out, const User& _user);
 };
