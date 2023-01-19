@@ -10,7 +10,7 @@ Category_spend::Category_spend(string _name): Category_earn(_name)
 	budget = 0;
 }
 
-Category_spend::Category_spend(const Category_spend& _spend): Category_earn(_spend.getName(), _spend.getMoney())
+Category_spend::Category_spend(const Category_spend& _spend): Category_earn(_spend)
 {
 	budget = _spend.getBudget();
 }
@@ -45,10 +45,9 @@ void Category_spend::print()
 	cout << "Category spend name : "<< getName() << endl << "Money spend : " << getMoney() << endl << "Budget : " << budget << endl;
 }
 
-int Category_spend::virtFunc()
+void Category_spend::virtFunc()
 {
 	cout << "Category_spend func" << endl;
-	return 0;
 }
 
 bool Category_spend::operator>(const Category_spend& _spend)

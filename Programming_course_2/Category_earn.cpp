@@ -8,7 +8,7 @@ Category_earn::Category_earn(string _name): Account(_name)
 {
 }
 
-Category_earn::Category_earn(const Category_earn& _earn): Account(_earn.getName(), _earn.getMoney())
+Category_earn::Category_earn(const Category_earn& _earn): Account(_earn)
 {
 }
 
@@ -25,10 +25,9 @@ void Category_earn::print()
 	cout << "Category name : " << getName() << endl << "Money : " << getMoney() << endl;
 }
 
-int Category_earn::virtFunc()
+void Category_earn::virtFunc()
 {
 	cout << "Categoty_earn func" << endl;
-	return 0;
 }
 
 Category_earn Category_earn::operator-(const Category_earn& _earn)

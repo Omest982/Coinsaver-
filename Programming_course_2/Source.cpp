@@ -14,6 +14,7 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "Russian");
 	//TEST
+	Account acc("12", 10);
 	User Ivan("Ivan");
 	Wallet Nalichka("Наличные", 100);
 	Wallet Bank("Банк", 100);
@@ -33,7 +34,8 @@ int main() {
 	cout << result << endl;
 	cout << Ivan;
 	Test arr;
-	cout << arr[1];
+	cout << arr[1] << endl;
+	cout << 10 + acc << endl;
 	
 	//TEST
 

@@ -14,7 +14,7 @@ public:
 	void setBudget(int newBudget);
 	int getBudget() const;
 	void print();
-	virtual int virtFunc();
+	virtual void virtFunc();
 	bool operator > (const Category_spend& _spend);
 	bool operator < (const Category_spend& _spend);
 	//Category_spend operator + (const Category_spend& _spend);

@@ -12,6 +12,12 @@ Account::Account(string newName)
 	money = 0;
 }
 
+Account::Account(int _money)
+{
+	name = "noName";
+	money = _money;
+}
+
 Account::Account(string newName, int newMoney)
 {
 	name = newName;
@@ -58,10 +64,9 @@ int Account::getMoney() const
 	return money;
 }
 
-int Account::virtFunc()
+void Account::virtFunc()
 {
 	cout << "Account func" << endl;
-	return 0;
 }
 
 bool Account::operator>(const Account& _account)

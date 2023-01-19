@@ -13,7 +13,7 @@ public:
 	Wallet(string _name, int _money);
 	~Wallet();				//Деструктор
 	void print();
-	virtual int virtFunc();
+	virtual void virtFunc();
 	Wallet& operator ++ ();
 	Wallet operator ++ (int);
 	Wallet& operator -- ();

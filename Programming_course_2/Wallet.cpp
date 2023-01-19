@@ -7,7 +7,7 @@ Wallet::Wallet(): Account()
 {
 }
 
-Wallet::Wallet(const Wallet& _wallet): Account(_wallet.getName(), _wallet.getMoney())
+Wallet::Wallet(const Wallet& _wallet): Account(_wallet)
 {
 }
 
@@ -25,10 +25,9 @@ void Wallet::print()
 	cout << "Wallet name is : " << getName() << endl << "Balance is : " << getMoney() << endl;
 }
 
-int Wallet::virtFunc()
+void Wallet::virtFunc()
 {
-	cout << "Wallet func" << endl;;
-	return 0;
+	cout << "Wallet func" << endl;
 }
 
 Wallet& Wallet::operator++ ()

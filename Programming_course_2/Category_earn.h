@@ -15,7 +15,7 @@ public:
 	Category_earn(string _name, int _money);
 	~Category_earn();		//Деструктор
 	void print();
-	virtual int virtFunc();
+	virtual void virtFunc();
 	Category_earn operator - (const Category_earn& _earn);
 	bool operator > (const Category_earn& _earn);
 	bool operator < (const Category_earn& _earn);

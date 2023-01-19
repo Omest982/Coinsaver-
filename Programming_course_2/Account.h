@@ -11,6 +11,7 @@ private:
 public:
 	Account();		//Constructors
 	Account(string _name);
+	Account(int _money);
 	Account(string _name, int _money);
 	Account(const Account& _account);
 	~Account();		//Destructor
@@ -20,7 +21,7 @@ public:
 	void minusMoney(int amount);
 	string getName() const;
 	int getMoney() const;
-	virtual int virtFunc();
+	virtual void virtFunc();
 	bool operator > (const Account& _account);
 	bool operator < (const Account& _account);
 	Account operator + (const Account& _account);
